@@ -1,7 +1,7 @@
 const { describe } = require("riteway");
 const { Worker } = require("worker_threads");
 
-const { info } = require("./test-utils.js");
+const { info } = require("./test-utils.ts");
 
 // This is the code that will be run in each worker thread.
 // It creates an id pool and returns it.
@@ -29,7 +29,7 @@ async function createIdPoolInWorker(max) {
 // in a worker thread.
 const createIdPoolsInWorkers = (numWorkers, max) => {
   return Promise.all(
-    Array.from({ length: numWorkers }, () => createIdPoolInWorker(max))
+    Array.from({ length: numWorkers }, () => createIdPoolInWorker(max)),
   );
 };
 

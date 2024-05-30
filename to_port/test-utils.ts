@@ -1,18 +1,18 @@
-const { createId } = require("./index.js");
+import { createId } from "../lib/index.ts";
 
-const info = (txt) => console.log(`# - ${txt}`);
+const info = (txt: string) => console.log(`# - ${txt}`);
 
 const idToBigInt = (id, _, __, radix = 36) =>
   [...id.toString()].reduce(
     (r, v) => r * BigInt(radix) + BigInt(parseInt(v, radix)),
-    0n
+    0n,
   );
 
 const buildHistogram = (numbers, bucketCount = 20) => {
   const buckets = Array(bucketCount).fill(0);
   let counter = 1;
   const bucketLength = Math.ceil(
-    Number(BigInt(36 ** 23) / BigInt(bucketCount))
+    Number(BigInt(36 ** 23) / BigInt(bucketCount)),
   );
 
   for (const number of numbers) {
@@ -46,7 +46,4 @@ const createIdPool = async ({ max = 100000 } = {}) => {
   return { ids, numbers, histogram };
 };
 
-module.exports.createIdPool = createIdPool;
-module.exports.buildHistogram = buildHistogram;
-module.exports.info = info;
-module.exports.idToBigInt = idToBigInt;
+export { buildHistogram, createIdPool, idToBigInt, info };

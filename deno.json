@@ -1,0 +1,24 @@
+{
+  "name": "@dewars/cuid2",
+  "version": "0.1.0",
+  "description": "Secure, collision-resistant ids optimized for horizontal scaling and performance.",
+  "exports": {
+    ".": "./mod.ts"
+  },
+  "imports": {
+    "@std/expect": "jsr:@std/expect@^0.224.3"
+  },
+  "publish": {
+    "exclude": [
+      ".github",
+      ".vscode",
+      "tests",
+      "to_port"
+    ]
+  },
+  "test": {
+    "include": [
+      "test/**/*.spec.ts"
+    ]
+  }
+}

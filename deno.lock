@@ -1,0 +1,53 @@
+{
+  "version": "3",
+  "packages": {
+    "specifiers": {
+      "jsr:@std/assert@^0.225.3": "jsr:@std/assert@0.225.3",
+      "jsr:@std/expect@^0.224.3": "jsr:@std/expect@0.224.3",
+      "jsr:@std/internal@^1.0.0": "jsr:@std/internal@1.0.0"
+    },
+    "jsr": {
+      "@std/assert@0.225.3": {
+        "integrity": "b3c2847aecf6955b50644cdb9cf072004ea3d1998dd7579fc0acb99dbb23bd4f",
+        "dependencies": [
+          "jsr:@std/internal@^1.0.0"
+        ]
+      },
+      "@std/expect@0.224.3": {
+        "integrity": "eacd71aaa426472bf04ddde7e0765b0b360d3ffa33ad2ca05a96fd7052caea41",
+        "dependencies": [
+          "jsr:@std/assert@^0.225.3",
+          "jsr:@std/internal@^1.0.0"
+        ]
+      },
+      "@std/internal@1.0.0": {
+        "integrity": "ac6a6dfebf838582c4b4f61a6907374e27e05bedb6ce276e0f1608fe84e7cd9a"
+      }
+    }
+  },
+  "remote": {},
+  "workspace": {
+    "dependencies": [
+      "jsr:@std/expect@^0.224.3"
+    ],
+    "packageJson": {
+      "dependencies": [
+        "npm:@noble/hashes@^1.1.5",
+        "npm:eslint-config-next@13.1.1",
+        "npm:eslint-config-prettier@8.5.0",
+        "npm:eslint-plugin-prettier@4.2.1",
+        "npm:eslint@8.30.0",
+        "npm:next@13.1.1",
+        "npm:pre-commit@1.2.2",
+        "npm:prettier@2.8.1",
+        "npm:react-dom@18.2.0",
+        "npm:react@18.2.0",
+        "npm:release-it@15.5.1",
+        "npm:riteway@7.0.0",
+        "npm:tap-nirvana@1.1.0",
+        "npm:updtr@4.0.0",
+        "npm:watch@1.0.2"
+      ]
+    }
+  }
+}

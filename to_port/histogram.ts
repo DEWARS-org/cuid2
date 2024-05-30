@@ -1,5 +1,5 @@
 const { describe } = require("riteway");
-const { createIdPool, info } = require("./test-utils.js");
+const { createIdPool, info } = require("./test-utils.ts");
 
 describe("Histogram", async (assert) => {
   const n = 100000;
@@ -33,7 +33,7 @@ describe("Histogram", async (assert) => {
     const charFrequencies = {};
     testIds.forEach((id) => {
       id.split("").forEach(
-        (char) => (charFrequencies[char] = (charFrequencies[char] || 0) + 1)
+        (char) => (charFrequencies[char] = (charFrequencies[char] || 0) + 1),
       );
     });
 
@@ -48,7 +48,7 @@ describe("Histogram", async (assert) => {
       given: "lots of ids generated",
       should: "produce even character frequency",
       actual: Object.values(charFrequencies).every(
-        (x) => x > minBinSize && x < maxBinSize
+        (x) => x > minBinSize && x < maxBinSize,
       ),
       expected: true,
     });
